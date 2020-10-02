@@ -17,7 +17,9 @@ function renderStudents(students) {
         }
         return absent
        })
-       return tags.join(' ')
+       return` <div class="text-center mt-5">
+       <h1>Roll Call!</h1> ${tags.join(' ')}
+       </div>`
 }
 
 function students() {
