@@ -1,55 +1,46 @@
 
 function renderAlbums(albuminfo) {
-    let i = 0;
-    let j = 0;
-    let k = 0;
-
-    var songBar = albuminfo.map(function(songs){
-        var songTitle = songs.title
-        var songLength = songs.length
-
-            return `
-            <div class="songBar>
-            <a><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-          </svg>${songTitle}${songLength}</a>
-            </div>`
-
-    })
-      
-
-    var artistCard = albuminfo.map(function(element){
-        var albumCover = element.albumCover
-        var albumTitle = element.albums.title
-       
+    var albumCard = albuminfo.map(function(albumCards){
+        albumTitle = renderAlbumTitle(albumCards.albums)
+        albumCover = renderAlbumPic(albumCards.albums)
+        albumSongs = renderAlbumSongs(albumCards.albums)
         return `
-        <div class="artistCard">
-            <div id="renderTitle">
-                <h1>${element.artist.toUpperCase()}</h1>
-                <hr>
-            </div>
-            <div id="albums">
-            <div class="row album-name">
-                <div class="col-2">
-                    <img id="album-cover" src="${albumCover}">
-                </div>
-                <div class="col-4">
-                    <h4>${albumTitle}</h4>
-                </div>
-            </div>
-            <div class="song">
-             ${songBar}
-            </div>
+        <div class="cardHeader">
+            <h1>${albumCards.artist}</h1>
+            <hr>
+        </div>
+        <div class="cardBody">
+            ${albumCover + albumTitle}
         </div>`
     })
-    return `
-        <div class="text-center mt-5">
-            ${artistCard}
-        </div>
-    `
+    return albumCard.join(' ')
 }
 
-function albums() {
+function renderAlbumTitle(albums){
+    let albumTitle = albums.map(function(albums){
+        return`
+        <div class="albumTitle">
+            ${albums.title}
+        </div>`
+    })
+    return albumTitle.join(' ')
+}
+
+function renderAlbumPic(albums){
+   return `<img src="${albums.albumCover}">`
+}
+
+function renderAlbumSongs(albums) {
+    albumsSongBar = albums.song
+    let albumSongs = albumsSongBar.map(function(song){
+        return `
+        <div class="songBar">
+            ${song.title}${song.length}
+        </div>`
+
+    })
+    return albumSongs.join(' ')
+}
     var content = document.getElementById('content');
 
     var albumsAbstraction = [
@@ -123,4 +114,3 @@ function albums() {
 
     content.innerHTML = renderAlbums(albumsAbstraction);
 
-}
