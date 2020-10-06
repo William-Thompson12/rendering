@@ -1,6 +1,14 @@
 
 function renderPokerHand(pokerHand) {
-    
+    var cards = pokerHand.map(function(card) {
+        let value = card.value;
+        let suit = card.suit;
+        
+        return`<div class="poker-hand style="width:100px;height:auto;""
+        <img src="cards/${value}${suit}.png">
+        </div>`
+    })
+    return cards.join(' ');
 }
 
 function pokerHand() {

@@ -1,9 +1,10 @@
 
 function renderRectangle(rectangle) {
+    var myRectangle = `<div style="width${rectangle.width}px;height:${rectangle.height}px;background-color:${rectangle.color}">
+    </div>`
     return `
         <div class="text-center mt-5">
-        <div style="width${rectangle.width}px;height:${rectangle.height}px;background-color:${rectangle.color}">
-        </div>
+         ${myRectangle}
         </div>
     `
 }

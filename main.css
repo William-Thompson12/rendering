@@ -3,3 +3,79 @@
     font-size: xx-large;
     font-weight: bold;
 }
+.pics > img{
+    width: 60px;
+    height: 60px;
+}
+#tweet-text {
+    font-family: sans-serif;
+    font-size: larger;
+    margin-left: 17px;
+    margin-right: 0;
+    padding-right: 0;
+}
+.tweetCard {
+    height: auto;
+    width: 750px;
+    border: 1px solid rgb(0, 132, 255);
+}
+#renderTitle {
+    font-family: Impact;
+    text-align: left;
+}
+#verifySymbol {
+    margin-left: 10px;
+    padding-left: 4px;
+    color: #1DA1F2;
+}
+.handle > a {
+    font-size: small;
+    text-decoration: none;
+}
+#likes > a{
+    text-align: left;
+    text-decoration: none;
+    color: grey;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#retweet > a{
+    text-align: left;
+    text-decoration: none;
+    color: grey;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#replies > a{
+    text-align: left;
+    text-decoration: none;
+    color: grey;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#mail > a {
+    text-align: left;
+    text-decoration: none;
+    color: grey;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer {
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.songbar {
+    border-top:1px solid grey;
+    border-bottom: 1px solid grey;
+}
+#surveyTitle {
+    text-align: left;
+}
+.surveyCard {
+    text-align: left;
+}
+span {
+    font-weight: 600;
+}
